@@ -1,0 +1,33 @@
+project:
+  name: "CodeGuard"
+  version: "0.1.0"
+
+data:
+  num_repos: 1000
+  target_functions: 50000
+  train_split: 0.7
+  val_split: 0.15
+  test_split: 0.15
+
+code_smells:
+  - long_method: 50  # lines threshold
+  - high_complexity: 10  # cyclomatic complexity
+  - too_many_params: 5
+  - deep_nesting: 4
+
+models:
+  xgboost:
+    n_estimators: 100
+    max_depth: 10
+    learning_rate: 0.1
+  
+  codebert:
+    model_name: "microsoft/codebert-base"
+    max_length: 512
+    batch_size: 16
+    learning_rate: 2e-5
+    epochs: 5
+
+mlflow:
+  experiment_name: "codeguard-experiments"
+  tracking_uri: "./mlruns"

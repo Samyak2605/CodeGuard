@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments
+venv/
+env/
+.env
+.venv
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# MLflow
+mlruns/
+.trash/
+
+# Data
+data/raw/
+data/processed/
+!data/README.md
+
+# Models
+*.pt
+*.pth
+*.pkl
+*.joblib
+*.model
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+
+# Logs
+*.log
+
+# Distribution
+build/
+dist/
+*.egg-info/
