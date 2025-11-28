@@ -3,7 +3,7 @@ import ast
 import time
 import logging
 import pandas as pd
-from github import Github, GithubException
+from github import Github, GithubException, Auth
 from tqdm import tqdm
 from dotenv import load_dotenv
 from typing import List, Dict, Optional
@@ -34,7 +34,8 @@ class GithubCollector:
         if not self.token:
             raise ValueError("GITHUB_TOKEN not found in environment variables.")
         
-        self.g = Github(self.token)
+        auth = Auth.Token(self.token)
+        self.g = Github(auth=auth)
         self.output_dir = output_dir
         self.batch_size = batch_size
         self.output_file = os.path.join(output_dir, "github_functions.csv")
