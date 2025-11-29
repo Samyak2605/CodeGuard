@@ -51,3 +51,22 @@
 ## Next Steps
 - **Manual Verification**: User to verify a sample of labels.
 - **ML Training**: Use this dataset to train CodeBERT in Week 2.
+
+## Feature Engineering (Day 4)
+
+### Extracted Features (30+ total)
+- **Basic**: Lines, characters, tokens, blank lines.
+- **Complexity**: Cyclomatic complexity, loops, conditionals, nesting depth.
+- **Function**: Parameters, return statements, decorators, type hints.
+- **Structure**: Calls, assignments, comparisons, list comprehensions.
+- **Naming**: Variable count, name length, snake_case ratio.
+- **Comments**: Comment count, ratio.
+- **Dependency**: Imports, from-imports.
+- **Advanced**: Halstead volume, Maintainability Index.
+
+### Data Splits
+- **Train**: 1,136 samples (70%)
+- **Validation**: 244 samples (15%)
+- **Test**: 244 samples (15%)
+- **Preprocessing**: Median imputation, RobustScaler.
+

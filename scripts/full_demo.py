@@ -75,11 +75,56 @@ def check_day3():
         print(f"❌ Clean Labeled Dataset Missing: {clean_file}")
         print("\nResult: Day 3 Labeling INCOMPLETE")
 
+def check_day4():
+    print_header("DAY 4: EDA & FEATURE ENGINEERING")
+    
+    # Check Notebooks
+    notebooks = ["notebooks/03_EDA_Deep_Dive.ipynb", "notebooks/04_Feature_Analysis.ipynb"]
+    for nb in notebooks:
+        if os.path.exists(nb):
+            print(f"✅ Found Notebook: {nb}")
+        else:
+            print(f"❌ Missing Notebook: {nb}")
+
+    # Check Source Code
+    src_files = ["src/features/feature_extractor.py", "src/features/preprocessor.py"]
+    for f in src_files:
+        if os.path.exists(f):
+            print(f"✅ Found Source: {f}")
+        else:
+            print(f"❌ Missing Source: {f}")
+
+    # Check Splits
+    splits = {
+        "Train": "data/processed/train.csv",
+        "Val": "data/processed/val.csv",
+        "Test": "data/processed/test.csv"
+    }
+    
+    all_splits_exist = True
+    for name, path in splits.items():
+        if os.path.exists(path):
+            df = pd.read_csv(path)
+            print(f"✅ Found {name} Set: {path} ({len(df)} samples)")
+            if name == "Train":
+                # Check for features
+                feature_cols = [c for c in df.columns if c not in ['code', 'repo_name', 'quality_score', 'has_long_method']]
+                print(f"   - Features Detected: {len(feature_cols)} (e.g., {', '.join(feature_cols[:3])}...)")
+        else:
+            print(f"❌ Missing {name} Set: {path}")
+            all_splits_exist = False
+            
+    if all_splits_exist:
+        print("\nResult: Day 4 Feature Engineering COMPLETE")
+    else:
+        print("\nResult: Day 4 Feature Engineering INCOMPLETE")
+
 if __name__ == "__main__":
-    print_header("CODEGUARD PROJECT DEMO (DAYS 1-3)")
+    print_header("CODEGUARD PROJECT DEMO (DAYS 1-4)")
     check_day1()
     check_day2()
     check_day3()
+    check_day4()
     print("\n" + "="*60)
     print(" DEMO COMPLETE")
     print("="*60)
