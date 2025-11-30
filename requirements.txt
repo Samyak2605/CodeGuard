@@ -12,7 +12,8 @@ scipy>=1.10.0
 
 # Code Analysis Tools
 pylint>=2.17.0
-radon>=6.0.0
+radon==6.0.1
+mlflow==2.8.00
 vulture>=2.7
 # ast is built-in
 

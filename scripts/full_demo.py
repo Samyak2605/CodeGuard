@@ -119,12 +119,59 @@ def check_day4():
     else:
         print("\nResult: Day 4 Feature Engineering INCOMPLETE")
 
+def check_day5():
+    print_header("DAY 5: BASELINE ML MODELS")
+    
+    # Check Scripts & Configs
+    files = [
+        "configs/mlflow_config.py",
+        "src/models/data_loader.py",
+        "src/models/xgboost_baseline.py",
+        "scripts/train_baselines.py"
+    ]
+    for f in files:
+        if os.path.exists(f):
+            print(f"✅ Found File: {f}")
+        else:
+            print(f"❌ Missing File: {f}")
+
+    # Check Models
+    models_dir = "models/baselines"
+    if os.path.exists(models_dir):
+        models = [f for f in os.listdir(models_dir) if f.endswith('.pkl')]
+        print(f"✅ Found {len(models)} Trained Models in {models_dir}")
+    else:
+        print(f"❌ Missing Models Directory: {models_dir}")
+
+    # Check Results
+    results_file = "results/baseline_results.csv"
+    if os.path.exists(results_file):
+        print(f"✅ Found Results: {results_file}")
+        try:
+            df = pd.read_csv(results_file)
+            print("\nBaseline Performance Summary:")
+            print(df[['smell', 'val_f1', 'test_f1']].to_string(index=False))
+        except Exception as e:
+            print(f"⚠️ Could not read results: {e}")
+    else:
+        print(f"❌ Missing Results: {results_file}")
+
+    # Check Analysis
+    nb = "notebooks/05_Baseline_Analysis.ipynb"
+    if os.path.exists(nb):
+        print(f"✅ Found Analysis Notebook: {nb}")
+    else:
+        print(f"❌ Missing Analysis Notebook: {nb}")
+
+    print("\nResult: Day 5 Baseline Models COMPLETE")
+
 if __name__ == "__main__":
-    print_header("CODEGUARD PROJECT DEMO (DAYS 1-4)")
+    print_header("CODEGUARD PROJECT DEMO (DAYS 1-5)")
     check_day1()
     check_day2()
     check_day3()
     check_day4()
+    check_day5()
     print("\n" + "="*60)
     print(" DEMO COMPLETE")
     print("="*60)
