@@ -1,0 +1,6 @@
+smell,best_cv_f1,val_f1,test_f1,best_params
+has_long_method,1.0,1.0,1.0,"{'colsample_bytree': 0.8, 'learning_rate': 0.1, 'max_depth': 6, 'min_child_weight': 1, 'n_estimators': 100, 'subsample': 0.8}"
+has_high_complexity,1.0,1.0,1.0,"{'colsample_bytree': 0.8, 'learning_rate': 0.1, 'max_depth': 6, 'min_child_weight': 1, 'n_estimators': 100, 'subsample': 0.8}"
+has_too_many_params,1.0,1.0,1.0,"{'colsample_bytree': 0.8, 'learning_rate': 0.1, 'max_depth': 6, 'min_child_weight': 1, 'n_estimators': 100, 'subsample': 0.8}"
+has_deep_nesting,1.0,1.0,1.0,"{'colsample_bytree': 0.8, 'learning_rate': 0.1, 'max_depth': 6, 'min_child_weight': 1, 'n_estimators': 100, 'subsample': 0.8}"
+has_no_docstring,0.7566784466749242,0.7926267281105991,0.7081339712918661,"{'colsample_bytree': 0.8, 'learning_rate': 0.3, 'max_depth': 10, 'min_child_weight': 1, 'n_estimators': 200, 'subsample': 0.8}"

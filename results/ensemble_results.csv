@@ -1,0 +1,11 @@
+smell,ensemble_type,val_f1,test_f1
+has_long_method,voting,1.0,1.0
+has_long_method,stacking,1.0,1.0
+has_high_complexity,voting,1.0,1.0
+has_high_complexity,stacking,1.0,1.0
+has_too_many_params,voting,1.0,1.0
+has_too_many_params,stacking,1.0,1.0
+has_deep_nesting,voting,1.0,1.0
+has_deep_nesting,stacking,1.0,1.0
+has_no_docstring,voting,0.8,0.7219512195121951
+has_no_docstring,stacking,0.8073394495412844,0.7246376811594203

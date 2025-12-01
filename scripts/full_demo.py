@@ -165,13 +165,63 @@ def check_day5():
 
     print("\nResult: Day 5 Baseline Models COMPLETE")
 
+def check_day6():
+    print_header("DAY 6: BASELINE OPTIMIZATION")
+    
+    # Check Scripts
+    scripts = [
+        "src/models/smote_handler.py",
+        "src/models/xgboost_with_smote.py",
+        "src/models/hyperparameter_tuning.py",
+        "src/models/random_forest_baseline.py",
+        "src/models/ensemble.py"
+    ]
+    for s in scripts:
+        if os.path.exists(s):
+            print(f"✅ Found Script: {s}")
+        else:
+            print(f"❌ Missing Script: {s}")
+
+    # Check Results CSVs
+    csvs = [
+        "results/smote_results.csv",
+        "results/hyperparameter_tuning_results.csv",
+        "results/random_forest_results.csv",
+        "results/ensemble_results.csv"
+    ]
+    for c in csvs:
+        if os.path.exists(c):
+            print(f"✅ Found Results: {c}")
+        else:
+            print(f"❌ Missing Results: {c}")
+
+    # Check Final Report
+    report = "results/BASELINE_FINAL_REPORT.md"
+    if os.path.exists(report):
+        print(f"✅ Found Final Report: {report}")
+        
+        # Show Ensemble Results
+        ensemble_res = "results/ensemble_results.csv"
+        if os.path.exists(ensemble_res):
+            try:
+                df = pd.read_csv(ensemble_res)
+                print("\nEnsemble Performance (Best Models):")
+                print(df[['smell', 'ensemble_type', 'val_f1']].to_string(index=False))
+            except:
+                pass
+    else:
+        print(f"❌ Missing Final Report: {report}")
+
+    print("\nResult: Day 6 Optimization COMPLETE")
+
 if __name__ == "__main__":
-    print_header("CODEGUARD PROJECT DEMO (DAYS 1-5)")
+    print_header("CODEGUARD PROJECT DEMO (DAYS 1-6)")
     check_day1()
     check_day2()
     check_day3()
     check_day4()
     check_day5()
+    check_day6()
     print("\n" + "="*60)
     print(" DEMO COMPLETE")
     print("="*60)

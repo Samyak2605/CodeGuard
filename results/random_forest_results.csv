@@ -1,0 +1,6 @@
+smell,model,val_f1,test_f1
+has_long_method,RandomForest,1.0,1.0
+has_high_complexity,RandomForest,1.0,1.0
+has_too_many_params,RandomForest,1.0,1.0
+has_deep_nesting,RandomForest,1.0,1.0
+has_no_docstring,RandomForest,0.7572815533980582,0.7035175879396985

@@ -1,0 +1,6 @@
+smell,method,val_f1,test_f1
+has_long_method,XGBoost + SMOTE,1.0,1.0
+has_high_complexity,XGBoost + SMOTE,1.0,1.0
+has_too_many_params,XGBoost + SMOTE,1.0,1.0
+has_deep_nesting,XGBoost + SMOTE,1.0,1.0
+has_no_docstring,XGBoost + SMOTE,0.7663551401869159,0.7572815533980582
