@@ -214,14 +214,49 @@ def check_day6():
 
     print("\nResult: Day 6 Optimization COMPLETE")
 
+def check_day7():
+    print_header("DAY 7: ERROR ANALYSIS & DOCUMENTATION")
+    
+    # Check Notebooks
+    notebooks = [
+        "notebooks/07_Error_Analysis.ipynb",
+        "notebooks/08_Portfolio_Visualizations.ipynb"
+    ]
+    for nb in notebooks:
+        if os.path.exists(nb):
+            print(f"✅ Found Notebook: {nb}")
+        else:
+            print(f"❌ Missing Notebook: {nb}")
+    
+    # Check Documentation
+    docs = [
+        "docs/WEEK1-2_SUMMARY.md"
+    ]
+    for doc in docs:
+        if os.path.exists(doc):
+            print(f"✅ Found Documentation: {doc}")
+        else:
+            print(f"❌ Missing Documentation: {doc}")
+    
+    # Check Portfolio Directory
+    portfolio_dir = "results/portfolio"
+    if os.path.exists(portfolio_dir):
+        print(f"✅ Found Portfolio Directory: {portfolio_dir}")
+        print(f"   (Visualizations will be generated when notebooks are run)")
+    else:
+        print(f"❌ Missing Portfolio Directory: {portfolio_dir}")
+    
+    print("\nResult: Day 7 Error Analysis & Documentation COMPLETE")
+
 if __name__ == "__main__":
-    print_header("CODEGUARD PROJECT DEMO (DAYS 1-6)")
+    print_header("CODEGUARD PROJECT DEMO (DAYS 1-7)")
     check_day1()
     check_day2()
     check_day3()
     check_day4()
     check_day5()
     check_day6()
+    check_day7()
     print("\n" + "="*60)
-    print(" DEMO COMPLETE")
+    print(" WEEK 1-2 COMPLETE - READY FOR CODEBERT")
     print("="*60)

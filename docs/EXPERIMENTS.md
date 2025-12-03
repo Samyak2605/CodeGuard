@@ -1,5 +1,18 @@
 # Experiment Log
 
+## Week 2: Error Analysis & Documentation (Day 7)
+
+### Summary: Week 1-2 Complete
+- **Total Experiments**: 35+
+- **Best Model**: Stacking Ensemble (96.15% F1)
+- **Key Finding**: "No Docstring" is the only non-trivial task (80.73% F1)
+- **Next Phase**: CodeBERT fine-tuning (Week 3)
+
+### Error Analysis Insights
+- **Structural Smells**: Perfect performance (100% F1) due to feature alignment
+- **No Docstring**: Requires semantic understanding for improvement
+- **Target for CodeBERT**: >85% F1 on "No Docstring" detection
+
 ## Week 2: Baseline Optimization (Day 6)
 
 ### Experiment #2: Ensemble Methods (Voting/Stacking)
